@@ -124,8 +124,8 @@ function MangaElt(obj) {
     if (obj.update) {
       this.update = obj.update;
     }
-    if (obj.cats !== undefined && obj.cats !== null) {
-        this.cats = JSON.parse(obj.cats) || obj.cats || [];
+    if (obj.cats !== undefined && obj.cats !== null && obj.cats.length>0) {
+        this.cats = (typeof obj.cats ==='object')? obj.cats : JSON.parse(obj.cats) || [];
     }
     if (obj.ts && fromSite) {
       this.ts = obj.ts;
