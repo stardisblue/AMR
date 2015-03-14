@@ -1928,7 +1928,7 @@ chrome.extension.isBeta = function () {
 }
 function initManifestVars() {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", chrome.extension.getURL('manifest.json'), false);
+    xhr.open("GET", chrome.extension.getURL('manifest.json'));
     xhr.onreadystatechange = function () {
         if (this.readyState == 4) {
             var manifest = JSON.parse(this.responseText);
